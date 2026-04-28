@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokedex Wiki</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Pokedex Wiki</h1>
+    <p>Explora fichas completas de Pokemon con una interfaz inspirada en una Pokedex moderna.</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <input id="searchInput" type="search" placeholder="Buscar por nombre..." aria-label="Buscar Pokemon por nombre">
+      <select id="typeFilter" aria-label="Filtrar por tipo">
+        <option value="">Todos los tipos</option>
+      </select>
+      <select id="generationFilter" aria-label="Filtrar por region">
+        <option value="all">Todas las regiones</option>
+        <option value="151">Kanto</option>
+        <option value="251">Johto</option>
+        <option value="386">Hoenn</option>
+        <option value="493">Sinnoh</option>
+        <option value="649">Teselia</option>
+        <option value="721">Kalos</option>
+        <option value="809">Alola</option>
+        <option value="898">Galar</option>
+        <option value="1025">Paldea</option>
+      </select>
+      <div class="view-switch" role="tablist" aria-label="Cambiar vista">
+        <button class="active" data-view="cards">Tarjetas</button>
+        <button data-view="kanban">Kanban</button>
+        <button data-view="table">Tabla</button>
+      </div>
+    </section>
+
+    <section id="status" class="status">Cargando Pokemon...</section>
+
+    <section id="cardsView" class="view"></section>
+    <section id="kanbanView" class="view hidden"></section>
+    <section id="tableView" class="view hidden"></section>
+  </main>
+
+  <dialog id="pokemonDialog">
+    <article id="pokemonDetail"></article>
+    <button id="closeDialog">Cerrar</button>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
