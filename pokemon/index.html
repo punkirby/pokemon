@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokedex Wiki</title>
+  <meta name="theme-color" content="#ba2c37">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pokedex Wiki">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon-app.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-app.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Pokedex Wiki</h1>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <input id="searchInput" type="search" placeholder="Buscar por nombre..." aria-label="Buscar Pokemon por nombre">
+      <select id="typeFilter" aria-label="Filtrar por tipo">
+        <option value="">Todos los tipos</option>
+      </select>
+      <select id="generationFilter" aria-label="Filtrar por region">
+        <option value="all">Todas las regiones</option>
+        <option value="151">Kanto</option>
+        <option value="251">Johto</option>
+        <option value="386">Hoenn</option>
+        <option value="493">Sinnoh</option>
+        <option value="649">Teselia</option>
+        <option value="721">Kalos</option>
+        <option value="809">Alola</option>
+        <option value="898">Galar</option>
+        <option value="1025">Paldea</option>
+      </select>
+      <div class="view-switch" role="tablist" aria-label="Cambiar vista">
+        <button class="active" data-view="cards">Tarjetas</button>
+        <button data-view="kanban">Kanban</button>
+        <button data-view="table">Tabla</button>
+      </div>
+    </section>
+
+    <section id="status" class="status">Cargando Pokemon...</section>
+
+    <section id="cardsView" class="view"></section>
+    <section id="kanbanView" class="view hidden"></section>
+    <section id="tableView" class="view hidden"></section>
+  </main>
+
+  <dialog id="pokemonDialog">
+    <article id="pokemonDetail"></article>
+    <button id="closeDialog">Cerrar</button>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
